@@ -387,6 +387,22 @@
     ]
   }
 
+	if show-list-of-todos {
+    let todos() = context {
+      let todo-outline = big-todo.todo_outline
+      let todo-elems = query(todo-outline.target)
+
+      if todo-elems.len() == 0 { return }
+
+      show outline: set heading(outlined: true, depth: 1)
+
+      todo-outline
+    }
+    roman-page[
+			#todos()
+		]
+  }
+
   // Body
   set page(
     footer: if thesis-compliant == false [
@@ -420,20 +436,6 @@
   )
   
   counter(page).update(1)
-
-  let todos() = context {
-    let todo-outline = big-todo.todo_outline
-    let todo-elems = query(todo-outline.target)
-
-    if todo-elems.len() == 0 { return }
-    
-    show outline: set heading(outlined: true, depth: 1)
-    pagebreak(weak: true)
-    todo-outline
-    pagebreak(weak: true)
-  }
-
-  if show-list-of-todos { todos() }
   
   set heading(numbering: "1.1.")
   
