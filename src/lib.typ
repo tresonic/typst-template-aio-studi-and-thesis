@@ -399,8 +399,8 @@
       todo-outline
     }
     roman-page[
-			#todos()
-		]
+      #todos()
+    ]
   }
 
   // Body
