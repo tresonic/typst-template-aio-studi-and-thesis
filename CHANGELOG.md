@@ -11,6 +11,7 @@
 ### Changed
 
 - BREAKING: Updated `list-of-abbreviations` structure to support back-references (requires `items` wrapper), thanks [@tresonic] (#24)
+- Update the pagination style for `list-of-todos` to use roman numerals (#27)
 
 ### Fixed
 
